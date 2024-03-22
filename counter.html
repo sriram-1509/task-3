@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="counter.css"></link>
+</head>
+<body>
+    <h1>COUNTER TIMER</h1>
+     <h1 id="counter">0</h1>
+     <div class="all">
+	  <button id="start">Start</button>
+	  <button id="stop">Stop</button>
+	  <button id="reset">Reset</button>
+     </div>
+</body>
+	<script>
+      let counter = document.getElementById('counter');
+let start = document.getElementById('start');
+let stop = document.getElementById('stop');
+let reset = document.getElementById('reset');
+let intervalId;
+
+start.addEventListener('click', function() {
+  intervalId = setInterval(function() {
+    let currentCount = parseInt(counter.innerText);
+    counter.innerText = currentCount + 1;
+  }, 1000);
+});
+
+stop.addEventListener('click', function() {
+  clearInterval(intervalId);
+});
+
+reset.addEventListener('click', function() {
+  counter.innerText = 0;
+  clearInterval(intervalId);
+});
+    </script>
+</body>
+</html>

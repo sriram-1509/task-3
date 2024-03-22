@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #next-btn {
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+
+      }
+    </style>
+  </head>
+  <body>
+    <button id="next-btn">></button>
+    <img name="slide" width="500" height="300" />
+    <script>
+      var i = 0;
+      var images = ["th.jpeg", "th (1).jpeg", "th (2).jpeg"];
+      var time = 3000;
+      var imgElement = document.querySelector('img[name="slide"]');
+      var nextBtn = document.getElementById("next-btn");
+
+      function changeimg() {
+        imgElement.src = images[i];
+        if (i <= images.length - 2) {
+          i++;
+        } else {
+          i = 0;
+        }
+      }
+
+      nextBtn.addEventListener("click", changeimg);
+
+      window.onload = changeimg;
+    </script>
+  </body>
+</html>

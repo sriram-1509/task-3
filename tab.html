@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="tab.css" />
+  </head>
+  <body>
+    <h1>TAB SECTION</h1>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'html')">HTML</button>
+      <button class="tablinks" onclick="openCity(event, 'css')">CSS</button>
+      <button class="tablinks" onclick="openCity(event, 'js')">JS</button>
+    </div>
+    <div id="html" class="tabcontent">
+      <h3>HTML</h3>
+      <ul>
+        <li>HTML stands for Hyper Text Markup Language</li>
+        <li>HTML is the standard markup language for creating Web pages</li>
+        <li>HTML describes the structure of a Web page</li>
+        <li>HTML consists of a series of elements</li>
+        <li>HTML elements tell the browser how to display the content</li>
+        <li>
+          HTML elements label pieces of content such as "this is a heading",
+          "this is a paragraph", "this is a link", etc.
+        </li>
+      </ul>
+    </div>
+    <div id="css" class="tabcontent">
+      <h3>CSS</h3>
+      <ul>
+        <li>CSS is the language we use to style an HTML document.</li>
+        <li>CSS describes how HTML elements should be displayed.</li>
+        <li>This tutorial will teach you CSS from basic to advanced.</li>
+      </ul>
+    </div>
+    <div id="js" class="tabcontent">
+      <h3>JS</h3>
+      <ul>
+        <li>JavaScript is the world's most popular programming language.</li>
+        <li>JavaScript is the programming language of the Web.</li>
+        <li>JavaScript is easy to learn.</li>
+        <li>This tutorial will teach you JavaScript from basic to advanced</li>
+      </ul>
+    </div>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
+</html>

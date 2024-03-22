@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="accordian.css" />
+  </head>
+  <body>
+    <h2>Accordion</h2>
+    <button class="accordion">HTML</button>
+    <div class="accord">
+      <ul>
+        <li>HTML stands for Hyper Text Markup Language</li>
+        <li>HTML is the standard markup language for creating Web pages</li>
+        <li>HTML describes the structure of a Web page</li>
+        <li>HTML consists of a series of elements</li>
+        <li>HTML elements tell the browser how to display the content</li>
+        <li>
+          HTML elements label pieces of content such as "this is a heading",
+          "this is a paragraph", "this is a link", etc.
+        </li>
+      </ul>
+    </div>
+    <button class="accordion">CSS</button>
+    <div class="accord">
+      <ul>
+        <li>CSS is the language we use to style an HTML document.</li>
+        <li>CSS describes how HTML elements should be displayed.</li>
+        <li>This tutorial will teach you CSS from basic to advanced.</li>
+      </ul>
+    </div>
+    <button class="accordion">js</button>
+    <div class="accord">
+      <ul>
+        <li>JavaScript is the world's most popular programming language.</li>
+        <li>JavaScript is the programming language of the Web.</li>
+        <li>JavaScript is easy to learn.</li>
+        <li>This tutorial will teach you JavaScript from basic to advanced</li>
+      </ul>
+    </div>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
